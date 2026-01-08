@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<title>Prelove Outfit</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #fde2e4, #e8f1ff, #fdf6ec);
+    color: #6b3e3e;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #f8cdd4, #e6d9ff);
+    color: #6b3e3e;
+    padding: 35px 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(160,120,160,0.25);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.6rem;
+}
+
+header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* NAV */
+nav {
+    background: rgba(255,255,255,0.9);
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(160,120,160,0.2);
+}
+
+nav a {
+    color: #7a3b3b;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* HERO (KEKAL – cuma lembutkan warna) */
+.hero {
+    background: linear-gradient(rgba(255,200,210,0.6), rgba(230,220,255,0.6)),
+                url("image/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #6b3e3e;
+    padding: 90px 20px;
+    text-align: center;
+}
+
+/* SECTION */
+section {
+    padding: 40px 30px;
+}
+
+/* KELEBIHAN */
+.kelebihan {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background: rgba(255,255,255,0.95);
+    width: 220px;
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(160,120,160,0.2);
+}
+
+/* PRODUK */
+.kategori h2 {
+    margin-top: 50px;
+    color: #7a3b3b;
+}
+
+.produk {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.card {
+    background: rgba(255,255,255,0.95);
+    width: 200px;
+    padding: 15px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 12px 30px rgba(160,120,160,0.25);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.harga {
+    color: #3b8c5a;
+    font-weight: bold;
+}
+
+/* SOLD TAG */
+.sold {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff7a7a;
+    color: white;
+    padding: 5px 8px;
+    font-size: 12px;
+    border-radius: 8px;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #ffd6e0, #e7d9ff);
+    color: #6b3e3e;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(160,120,160,0.4);
+    background: #fff;
+}
+.btn:hover {
+    background: linear-gradient(135deg, #e7d9ff, #ffd6e0);
+}
+
+/* KONTAK */
+.kontak {
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    padding: 25px;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(160,120,160,0.25);
+}
+
+/* HOME FLOATING PILL */
+.home-pill {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.9);
+    color: #6b3e3e;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 10px 25px rgba(160,120,160,0.3);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.home-pill:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(160,120,160,0.45);
+}
+
+/* SLIDER */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0;
+    border-radius: 14px;
+}
+
+/* BUTTON SLIDE */
+.slide-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.8);
+    border: none;
+    padding: 6px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.slide-btn:hover {
+    background: #fff;
+}
+
+.prev { left: 8px; }
+.next { right: 8px; }
+
+.card {
+    position: relative;
+}
+
+.sold-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(135deg, #f8cdd4, #e6d9ff);
+    color: #6b3e3e;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+</style>
+
+</head>
+
+<body>
+
+    <a href="index.html" class="home-pill">🏠 Home</a>
+
+
+<header>
+    <h1>Prelove Outfit</h1>
+    <p>Baju prelove berkualiti & harga mesra poket ♻️</p>
+</header>
+
+<section>
+    <h2 style="text-align:center;">Kenapa Pilih Kami?</h2>
+    <div class="kelebihan">
+        <div class="box">♻️ Barang Berkualiti</div>
+        <div class="box">💰 Harga Murah</div>
+        <div class="box">📦 Ready Stock</div>
+        <div class="box">📱 Order Mudah</div>
+    </div>
+</section>
+
+<section id="produk" class="kategori">
+
+<h2>Blouse</h2>
+<div class="produk">
+    <div class="card">
+        <img src="image/blouse1.jpg">
+        <h3>A01</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse2.jpg">
+        <h3>A02</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse3.jpg">
+        <h3>A03</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse4.jpg">
+        <h3>A04</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse5.jpg">
+        <h3>A05</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse6.jpg">
+        <h3>A06</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse7.jpg">
+        <h3>A07</h3>
+        <p>Size M (new)</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse8.jpg">
+        <h3>A08</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse9.jpg">
+        <h3>A09</h3>
+        <p>Size M (new)</p>
+        <p class="harga">RM20.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse10.jpg">
+        <h3>A10</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse11.jpg">
+        <h3>A11</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse12.jpg">
+        <h3>A12</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse13.jpg">
+        <h3>A13</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse14.jpg">
+        <h3>A14</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse15.jpg">
+        <h3>A15</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse16.jpg">
+        <h3>A16</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse17.jpg">
+        <h3>A17</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse18.jpg">
+        <h3>A18</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse19.jpg">
+        <h3>A19</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse20.jpg">
+        <h3>A20</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse21.jpg">
+        <h3>A21</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse22.jpg">
+        <h3>A22</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse23.jpg">
+        <h3>A23</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse24.jpg">
+        <h3>A24</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse25.jpg">
+        <h3>A25</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse26.jpg">
+        <h3>A26</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse27.jpg">
+        <h3>A27</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse28.jpg">
+        <h3>A28</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/blouse29.jpg">
+        <h3>A29</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Cardigen</h2>
+<div class="produk">
+    <div class="card">
+        <img src="image/cardi1.jpg">
+        <h3>B01</h3>
+        <p>Size M</p>
+        <p class="harga">RM6.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi2.jpg">
+        <h3>B02</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi3.jpg">
+        <h3>B03</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi4.jpg">
+        <h3>B04</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi5.jpg">
+        <h3>B05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi6.jpg">
+        <h3>B06</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi7.jpg">
+        <h3>B07</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi8.jpg">
+        <h3>B08</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi9.jpg">
+        <h3>B09</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi10.jpg">
+        <h3>B10</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi11.jpg">
+        <h3>B11</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card sold">
+        <img src="image/cardi12.jpg">
+        <span class="sold-label">SOLD</span>
+        <h3>B12</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/cardi13.jpg">
+        <h3>B13</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Knitwear</h2>
+<div class="produk">
+    <div class="card">
+        <img src="image/k1.jpg">
+        <h3>D01</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k2.jpg">
+        <h3>D02</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+
+    <div class="card sold">
+    <img src="image/k3.jpg">
+    <span class="sold-label">SOLD</span>
+    <h3>D03</h3>
+    <p>Size M</p>
+    <p class="harga">RM15.00</p>
+    <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+</div>
+
+    <div class="card">
+        <img src="image/k4.jpg">
+        <h3>D04</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k5.jpg">
+        <h3>D05</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k6.jpg">
+        <h3>D06</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k7.jpg">
+        <h3>D07</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k8.jpg">
+        <h3>D08</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k9.jpg">
+        <h3>D09</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k10.jpg">
+        <h3>D10</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k11.jpg">
+        <h3>D11</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k12.jpg">
+        <h3>D12</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k13.jpg">
+        <h3>D13</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k14.jpg">
+        <h3>D14</h3>
+        <p>Size M</p>
+        <p class="harga">RM9.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k15.jpg">
+        <h3>D15</h3>
+        <p>Size M</p>
+        <p class="harga">RM9.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k16.jpg">
+        <h3>D16</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k17.jpg">
+        <h3>D17</h3>
+        <p>Size M</p>
+        <p class="harga">RM18.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k18.jpg">
+        <h3>D18</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k19.jpg">
+        <h3>D19</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k20.jpg">
+        <h3>D20</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k21.jpg">
+        <h3>D21</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k22.jpg">
+        <h3>D22</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k23.jpg">
+        <h3>D23</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k24.jpg">
+        <h3>D24</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k25.jpg">
+        <h3>D25</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card sold">
+        <img src="image/k26.jpg">
+        <span class="sold-label">SOLD</span>
+        <h3>D26</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k27.jpg">
+        <h3>D27</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k28.jpg">
+        <h3>D28</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k29.jpg">
+        <h3>D29</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k31.jpg">
+        <h3>D31</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/k32.jpg">
+        <h3>D32</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Kemeja</h2>
+<div class="produk">
+    <div class="card">
+        <img src="image/kemeja1.jpg">
+        <h3>E01</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja2.jpg">
+        <h3>E02</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja3.jpg">
+        <h3>E03</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja4.jpg">
+        <h3>E04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja5.jpg">
+        <h3>E05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja6.jpg">
+        <h3>E06</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja7.jpg">
+        <h3>E07</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja8.jpg">
+        <h3>E08</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja9.jpg">
+        <h3>E09</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja10.jpg">
+        <h3>E10</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja11.jpg">
+        <h3>E11</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja12.jpg">
+        <h3>E12</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card sold">
+        <img src="image/kemeja13.jpg">
+        <span class="sold-label">SOLD</span>
+        <h3>E13</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja14.jpg">
+        <h3>E14</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="image/kemeja15.jpg">
+        <h3>E15</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>One set</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/oneset1.jpg">
+        <h3>F01</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset2.jpg">
+        <h3>F02</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset3.jpg">
+        <h3>F03</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset4.jpg">
+        <h3>F04</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset5.jpg">
+        <h3>F05</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset6.jpg">
+        <h3>F06</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/oneset7.jpg">
+        <h3>F06</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Seluar</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/seluar1.jpg">
+        <h3>G01</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar2.jpg">
+        <h3>G02</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar3.jpg">
+        <h3>G03</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar4.jpg">
+        <h3>G04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar5.jpg">
+        <h3>G05</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar6.jpg">
+        <h3>G06</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar7.jpg">
+        <h3>G07</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar8.jpg">
+        <h3>G08</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar9.jpg">
+        <h3>G09</h3>
+        <p>Size M</p>
+        <p class="harga">RM20.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar10.jpg">
+        <h3>G10</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar11.jpg">
+        <h3>G11</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar12.jpg">
+        <h3>G12</h3>
+        <p>Size M (seluar budak)</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar13.jpg">
+        <h3>G13</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar14.jpg">
+        <h3>G14</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar15.jpg">
+        <h3>G15</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar16.jpg">
+        <h3>G16</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar17.jpg">
+        <h3>G17</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/seluar18.jpg">
+        <h3>G18</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Skirt</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/skirt1.jpg">
+        <h3>H01</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt2.jpg">
+        <h3>H02</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt3.jpg">
+        <h3>H03</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt4.jpg">
+        <h3>H04</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt5.jpg">
+        <h3>H05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt6.jpg">
+        <h3>H06</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt7.jpg">
+        <h3>H07</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt8.jpg">
+        <h3>H08</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt9.jpg">
+        <h3>H09</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt10.jpg">
+        <h3>H10</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/skirt11.jpg">
+        <h3>H11</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+
+    <div class="card sold">
+    <img src="imagee/skirt12.jpg">
+    <span class="sold-label">SOLD</span>
+
+    <h3>H12</h3>
+    <p>Size M</p>
+    <p class="harga">RM20.00</p>
+    <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+</div>
+
+</div>
+
+<h2>Sweatshirt</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/sweatshirt1.jpg">
+        <h3>I01</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt2.jpg">
+        <h3>I02</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt3.jpg">
+        <h3>I03</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt4.jpg">
+        <h3>I04</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt5.jpg">
+        <h3>I05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt6.jpg">
+        <h3>I06</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt7.jpg">
+        <h3>I07</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt8.jpg">
+        <h3>I08</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt9.jpg">
+        <h3>I09</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt10.jpg">
+        <h3>I10</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt11.jpg">
+        <h3>I11</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt12.jpg">
+        <h3>I12</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sweatshirt13.jpg">
+        <h3>I13</h3>
+        <p>Size M</p>
+        <p class="harga">RM12.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Tshirt</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/tshirt1.jpg">
+        <h3>J01</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt2.jpg">
+        <h3>J02</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt3.jpg">
+        <h3>J03</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt4.jpg">
+        <h3>J04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt5.jpg">
+        <h3>J05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt6.jpg">
+        <h3>J06</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt7.jpg">
+        <h3>J07</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt8.jpg">
+        <h3>J08</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt9.jpg">
+        <h3>J09</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt10.jpg">
+        <h3>J10</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt11.jpg">
+        <h3>J11</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt12.jpg">
+        <h3>J12</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt13.jpg">
+        <h3>J13</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt14.jpg">
+        <h3>J14</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt15.jpg">
+        <h3>J15</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt16.jpg">
+        <h3>J16</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt17.jpg">
+        <h3>J17</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt18.jpg">
+        <h3>J18</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt19.jpg">
+        <h3>J19</h3>
+        <p>Size M (new)</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt20.jpg">
+        <h3>J20</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt21.jpg">
+        <h3>J21</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt22.jpg">
+        <h3>J22</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt23.jpg">
+        <h3>J23</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/tshirt24.jpg">
+        <h3>J24</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Vest</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/vest1.jpg">
+        <h3>K01</h3>
+        <p>Size M</p>
+        <p class="harga">RM13.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/vest2.jpg">
+        <h3>K02</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/vest3.jpg">
+        <h3>K03</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+
+    <div class="card sold">
+        <img src="imagee/vest4.jpg">
+        <span class="sold-label">SOLD</span>
+        <h3>K04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Men clothes</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/baju1.jpg">
+        <h3>L01</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/baju2.jpg">
+        <h3>L02</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/baju3.jpg">
+        <h3>L03</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/baju4.jpg">
+        <h3>L04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/baju5.jpg">
+        <h3>L05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/baju6.jpg">
+        <h3>L06</h3>
+        <p>Size M</p>
+        <p class="harga">RM7.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Sleeveless</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/sleeveless1.jpg">
+        <h3>M01</h3>
+        <p>Size M</p>
+        <p class="harga">RM8.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless2.jpg">
+        <h3>M02</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless3.jpg">
+        <h3>M03</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless4.jpg">
+        <h3>M04</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless5.jpg">
+        <h3>M05</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless6.jpg">
+        <h3>M06</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/sleeveless7.jpg">
+        <h3>M07</h3>
+        <p>Size M</p>
+        <p class="harga">RM5.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Hoddie</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/hoddie1.jpg">
+        <h3>N01</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/hoddie2.jpg">
+        <h3>N02</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+    <div class="card">
+        <img src="imagee/hoddie3.jpg">
+        <h3>N03</h3>
+        <p>Size M</p>
+        <p class="harga">RM10.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+<h2>Jubah/Abaya</h2>
+<div class="produk">
+    <div class="card">
+        <img src="imagee/jubah1.jpg">
+        <h3>O01</h3>
+        <p>Size M</p>
+        <p class="harga">RM15.00</p>
+        <a class="btn" href="https://wa.me/60142992105">WhatsApp</a>
+    </div>
+</div>
+
+
+   
+</div>
+
+</section>
+
+<script>
+function slide(btn, direction) {
+    const slider = btn.closest('.slider');
+    const slides = slider.querySelector('.slides');
+    const total = slides.children.length;
+    let index = slides.dataset.index ? parseInt(slides.dataset.index) : 0;
+
+    index += direction;
+
+    if (index < 0) index = total - 1;
+    if (index >= total) index = 0;
+
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    slides.dataset.index = index;
+}
+</script>
+
+
+<section id="Contact">
+    <h2>📞 Contact</h2>
+    <div class="Contact">
+        <p><b>WhatsApp:</b> 014-299 2105</p>
+        <p><b>TikTok:</b> JIKAH STORE</p>
+        <p><b>Instagram:</b> @prelovebyjikahh</p>
+        <p><b>Lokasi:</b> Shah Alam, Selangor</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 Prelove Outfit / by Jikahmedii</p>
+</footer>
+
+</body>
+</html>
